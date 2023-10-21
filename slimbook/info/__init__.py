@@ -30,15 +30,15 @@ SLB_PLATFORM_CLEVO =          0x2000
 
 def product_name():
     _libslimbook.slb_info_product_name.restype = c_char_p
-    return _libslimbook.slb_info_product_name()
+    return _libslimbook.slb_info_product_name().decode("utf-8")
 
 def board_vendor():
     _libslimbook.slb_info_board_vendor.restype = c_char_p
-    return _libslimbook.slb_info_board_vendor()
+    return _libslimbook.slb_info_board_vendor().decode("utf-8")
 
 def product_serial():
     _libslimbook.slb_info_product_serial.restype = c_char_p
-    return _libslimbook.slb_info_product_serial()
+    return _libslimbook.slb_info_product_serial().decode("utf-8")
 
 def get_model():
     return _libslimbook.slb_info_get_model()
