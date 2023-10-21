@@ -1,5 +1,6 @@
 import ctypes
 import ctypes.util
+from ctypes import c_char_p
 
 _libslimbook = ctypes.CDLL(ctypes.util.find_library('slimbook'))
 
@@ -27,8 +28,23 @@ SLB_PLATFORM_QC71 =           0x1000
 SLB_PLATFORM_CLEVO =          0x2000
 
 
+def product_name():
+    _libslimbook.slb_info_product_name.restype = c_char_p
+    return _libslimbook.slb_info_product_name()
+
+def board_vendor():
+    _libslimbook.slb_info_board_vendor.restype = c_char_p
+    return _libslimbook.slb_info_board_vendor()
+
+def product_serial():
+    _libslimbook.slb_info_product_serial.restype = c_char_p
+    return _libslimbook.slb_info_product_serial()
+
 def get_model():
     return _libslimbook.slb_info_get_model()
 
 def get_platform():
     return _libslimbook.slb_info_get_platform()
+
+def is_module_loaded():
+    return (_libslimbook.slb_info_is_module_loaded() != 0 )
