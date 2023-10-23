@@ -7,5 +7,5 @@ Homepage: https://github.com/Slimbook-Team/python-slimbook
 
 Package: python3-slimbook
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${python:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${python:Depends}, libslimbook1
  This python module wraps libslimbook functionality with ctypes and addds some extra features
