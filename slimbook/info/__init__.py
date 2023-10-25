@@ -6,27 +6,26 @@ _libslimbook = ctypes.CDLL(ctypes.util.find_library('slimbook'))
 
 SLB_MODEL_UNKNOWN =           0x0000
 
-SLB_MODEL_EXECUTIVE =         0x1000
-SLB_MODEL_EXECUTIVE_14_11TH = 0x1001
-SLB_MODEL_EXECUTIVE_12TH =    0x1002
+SLB_MODEL_EXECUTIVE =         0x0100
+SLB_MODEL_EXECUTIVE_14_11TH = 0x0101
+SLB_MODEL_EXECUTIVE_12TH =    0x0102
 
-SLB_MODEL_PROX =              0x2000
-SLB_MODEL_PROX_AMD =          0x2001
-SLB_MODEL_PROX15_AMD =        0x2002
-SLB_MODEL_PROX_AMD5 =         0x2003
-SLB_MODEL_PROX15_AMD5 =       0x2004
+SLB_MODEL_PROX =              0x0200
+SLB_MODEL_PROX_AMD =          0x0201
+SLB_MODEL_PROX15_AMD =        0x0202
+SLB_MODEL_PROX_AMD5 =         0x0203
+SLB_MODEL_PROX15_AMD5 =       0x0204
 
-SLB_MODEL_TITAN =             0x4000
+SLB_MODEL_TITAN =             0x0400
 
-SLB_MODEL_HERO =              0x8000
-SLB_MODEL_HERO_RPL_RTX =      0x8001
+SLB_MODEL_HERO =              0x0800
+SLB_MODEL_HERO_RPL_RTX =      0x0801
 
-SLB_MODEL_ESSENTIAL =         0xA000
+SLB_MODEL_ESSENTIAL =         0x1000
 
 SLB_PLATFORM_UNKNOWN =        0x0000
-SLB_PLATFORM_QC71 =           0x1000
-SLB_PLATFORM_CLEVO =          0x2000
-
+SLB_PLATFORM_QC71 =           0x0100
+SLB_PLATFORM_CLEVO =          0x0200
 
 def product_name():
     _libslimbook.slb_info_product_name.restype = c_char_p
@@ -39,6 +38,14 @@ def board_vendor():
 def product_serial():
     _libslimbook.slb_info_product_serial.restype = c_char_p
     return _libslimbook.slb_info_product_serial().decode("utf-8")
+
+def bios_version():
+    _libslimbook.slb_info_bios_version.restype = c_char_p
+    return _libslimbook.slb_info_bios_version().decode("utf-8")
+
+def ec_firmware_release():
+    _libslimbook.slb_info_ec_firmware_release.restype = c_char_p
+    return _libslimbook.slb_info_ec_firmware_release().decode("utf-8")
 
 def get_model():
     return _libslimbook.slb_info_get_model()
