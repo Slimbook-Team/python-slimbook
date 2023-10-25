@@ -1,3 +1,9 @@
+python-slimbook (1.1.0) jammy; urgency=medium
+
+  * Matched libslimbook api update
+
+ -- Slimbook <dev@slimbook.es>  Wed, 25 Oct 2023 12:41:50 +0200
+
 python-slimbook (1.0.1) jammy; urgency=medium
 
   * Dummy upgrade
