@@ -1,3 +1,9 @@
+python-slimbook (1.3.0) jammy; urgency=medium
+
+  * Matching libslimbook model constants (and version)
+
+ -- Slimbook <dev@slimbook.es>  Thu, 09 Nov 2023 16:02:37 +0100
+
 python-slimbook (1.1.0) jammy; urgency=medium
 
   * Matched libslimbook api update
