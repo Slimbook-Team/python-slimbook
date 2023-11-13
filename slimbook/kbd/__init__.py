@@ -12,5 +12,4 @@ def backlight_get(model):
     return color
 
 def backlight_set(model,color):
-    _libslimbook.slb_kbd_backlight_set.restype = c_int
     _libslimbook.slb_kbd_backlight_set(model,color)

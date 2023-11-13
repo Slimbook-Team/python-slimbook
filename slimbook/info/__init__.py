@@ -1,6 +1,6 @@
 import ctypes
 import ctypes.util
-from ctypes import c_char_p
+from ctypes import c_char_p, c_uint, c_ulonglong
 
 _libslimbook = ctypes.CDLL(ctypes.util.find_library('slimbook'))
 
@@ -65,3 +65,22 @@ def get_platform():
 
 def is_module_loaded():
     return (_libslimbook.slb_info_is_module_loaded() != 0 )
+
+def uptime():
+    return _libslimbook.slb_info_uptime()
+
+def kernel():
+    _libslimbook.slb_info_kernel.restype = c_char_p
+    return _libslimbook.slb_info_kernel().decode("utf-8")
+    
+def cmdline():
+    _libslimbook.slb_info_cmdline.restype = c_char_p
+    return _libslimbook.slb_info_cmdline().decode("utf-8")
+
+def total_memory():
+    _libslimbook.slb_info_total_memory.restype = c_ulonglong
+    return _libslimbook.slb_info_total_memory()
+    
+def available_memory():
+    _libslimbook.slb_info_available_memory.restype = c_ulonglong
+    return _libslimbook.slb_info_available_memory()
