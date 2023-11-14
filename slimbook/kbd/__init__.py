@@ -9,7 +9,7 @@ def backlight_get(model):
     _libslimbook.slb_config_load.restype = c_int
     status = _libslimbook.slb_kbd_backlight_get(model, byref(color))
     
-    return color
+    return color.value
 
 def backlight_set(model,color):
     _libslimbook.slb_kbd_backlight_set(model,color)
