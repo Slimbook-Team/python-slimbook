@@ -1,3 +1,11 @@
+python-slimbook (1.5) jammy; urgency=medium
+
+  * Bump to libslimbook 1.5
+  * New info functions to retrieve some kernel info
+  * Added qc71 specific functions
+
+ -- Slimbook <dev@slimbook.es>  Tue, 14 Nov 2023 16:24:46 +0100
+
 python-slimbook (1.3.0) jammy; urgency=medium
 
   * Matching libslimbook model constants (and version)
