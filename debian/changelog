@@ -1,3 +1,10 @@
+python-slimbook (1.6) jammy; urgency=medium
+
+  * Bump to libslimbook 1.6
+  * Added partial smbios query support (processor and memory device ftm)
+
+ -- Slimbook <dev@slimbook.es>  Fri, 08 Dec 2023 09:25:21 +0100
+
 python-slimbook (1.5) jammy; urgency=medium
 
   * Bump to libslimbook 1.5
