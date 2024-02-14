@@ -1,3 +1,10 @@
+python-slimbook (1.8.0) jammy; urgency=medium
+
+  * Bump to libslimbook 1.8.0
+  * Device path detection is not here, I expect to rename functions on libslimbook soon 
+
+ -- Slimbook <dev@slimbook.es>  Wed, 14 Feb 2024 17:55:39 +0100
+
 python-slimbook (1.6) jammy; urgency=medium
 
   * Bump to libslimbook 1.6
