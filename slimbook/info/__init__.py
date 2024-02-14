@@ -4,6 +4,8 @@ from ctypes import c_char_p, c_uint, c_ulonglong
 
 _libslimbook = ctypes.CDLL(ctypes.util.find_library('slimbook'))
 
+SLB_FAMILY_MASK =                 0xffffff00
+
 SLB_MODEL_UNKNOWN =               0x0000
 
 SLB_MODEL_EXECUTIVE =             0x0100
@@ -33,9 +35,21 @@ SLB_MODEL_ELEMENTAL =             0x2000
 SLB_MODEL_ELEMENTAL_15_I12 =      0x2001
 SLB_MODEL_ELEMENTAL_14_I12 =      0x2002
 
+SLB_MODEL_EXCALIBUR =             0x4000
+SLB_MODEL_EXCALIBUR_14_AMD7 =     0x4001
+SLB_MODEL_EXCALIBUR_16_AMD7 =     0x4002
+
 SLB_PLATFORM_UNKNOWN =            0x0000
 SLB_PLATFORM_QC71 =               0x0100
 SLB_PLATFORM_CLEVO =              0x0200
+SLB_PLATFORM_Z16 =                0x0400
+
+SLB_SCAN_QC71_SUPER_LOCK =        0x68
+SLB_SCAN_QC71_SILENT_MODE =       0x69
+SLB_SCAN_QC71_TOUCHPAD_SWITCH =   0x76
+SLB_SCAN_Z16_SILENT_MODE =        0xf2
+SLB_SCAN_Z16_NORMAL_MODE =        0xf9
+SLB_SCAN_Z16_PERFORMANCE_MODE =   0xe2
 
 def product_name():
     _libslimbook.slb_info_product_name.restype = c_char_p
@@ -59,6 +73,9 @@ def ec_firmware_release():
 
 def get_model():
     return _libslimbook.slb_info_get_model()
+
+def get_family():
+    return _libslimbook.slb_info_get_family()
 
 def get_platform():
     return _libslimbook.slb_info_get_platform()
