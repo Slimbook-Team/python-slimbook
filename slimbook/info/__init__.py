@@ -83,6 +83,15 @@ def get_platform():
 def is_module_loaded():
     return (_libslimbook.slb_info_is_module_loaded() != 0 )
 
+def keyboard_device():
+    return _libslimbook.slb_info_keyboard_device()
+
+def module_device():
+    return _libslimbook.slb_info_module_device()
+
+def touchpad_device():
+    return _libslimbook.slb_info_touchpad_device()
+
 def uptime():
     return _libslimbook.slb_info_uptime()
 
