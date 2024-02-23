@@ -84,13 +84,16 @@ def is_module_loaded():
     return (_libslimbook.slb_info_is_module_loaded() != 0 )
 
 def keyboard_device():
-    return _libslimbook.slb_info_keyboard_device()
+    _libslimbook.slb_info_keyboard_device.restype = c_char_p
+    return _libslimbook.slb_info_keyboard_device().decode("utf-8")
 
 def module_device():
-    return _libslimbook.slb_info_module_device()
+    _libslimbook.slb_info_module_device.restype = c_char_p
+    return _libslimbook.slb_info_module_device().decode("utf-8")
 
 def touchpad_device():
-    return _libslimbook.slb_info_touchpad_device()
+    _libslimbook.slb_info_touchpad_device.restype = c_char_p
+    return _libslimbook.slb_info_touchpad_device().decode("utf-8")
 
 def uptime():
     return _libslimbook.slb_info_uptime()
