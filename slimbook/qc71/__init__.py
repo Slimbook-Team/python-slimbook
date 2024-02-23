@@ -33,3 +33,13 @@ def silent_mode_get():
 
 def silent_mode_set(value):
         status = _libslimbook.slb_qc71_silent_mode_set(value)
+
+def turbo_mode_get():
+    value = c_uint()
+    _libslimbook.slb_qc71_turbo_mode_get.restype = c_uint
+    status = _libslimbook.slb_qc71_turbo_mode_get(byref(value))
+    
+    return value.value
+
+def turbo_mode_set(value):
+        status = _libslimbook.slb_qc71_turbo_mode_set(value)
