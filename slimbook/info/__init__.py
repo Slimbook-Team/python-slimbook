@@ -56,6 +56,10 @@ def product_name():
     _libslimbook.slb_info_product_name.restype = c_char_p
     return _libslimbook.slb_info_product_name().decode("utf-8")
 
+def product_sku():
+    _libslimbook.slb_info_product_sku.restype = c_char_p
+    return _libslimbook.slb_info_product_sku().decode("utf-8")
+
 def board_vendor():
     _libslimbook.slb_info_board_vendor.restype = c_char_p
     return _libslimbook.slb_info_board_vendor().decode("utf-8")
