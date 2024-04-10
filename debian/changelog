@@ -1,3 +1,9 @@
+python-slimbook (1.11.0) jammy; urgency=medium
+
+  * Bump to libslimbook 1.11.0
+
+ -- Slimbook <dev@slimbook.es>  Wed, 10 Apr 2024 11:56:59 +0200
+
 python-slimbook (1.9.4) jammy; urgency=medium
 
   * Early SKU support
