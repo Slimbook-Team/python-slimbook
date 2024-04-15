@@ -2,7 +2,7 @@ import ctypes
 import ctypes.util
 from ctypes import c_char_p, c_int, c_uint, byref
 
-_libslimbook = ctypes.CDLL(ctypes.util.find_library('slimbook'))
+_libslimbook = ctypes.CDLL("libslimbook.so.1")
 
 def backlight_get(model):
     color = c_uint()
