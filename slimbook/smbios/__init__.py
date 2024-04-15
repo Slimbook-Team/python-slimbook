@@ -1,7 +1,7 @@
 import ctypes
 import ctypes.util
 
-_libslimbook = ctypes.CDLL(ctypes.util.find_library('slimbook'))
+_libslimbook = ctypes.CDLL("libslimbook.so.1")
 
 MAX_PROCESSOR_VERSION = 48
 

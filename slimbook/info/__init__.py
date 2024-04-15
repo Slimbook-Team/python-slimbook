@@ -2,7 +2,7 @@ import ctypes
 import ctypes.util
 from ctypes import c_char_p, c_uint, c_ulonglong
 
-_libslimbook = ctypes.CDLL(ctypes.util.find_library('slimbook'))
+_libslimbook = ctypes.CDLL("libslimbook.so.1")
 
 SLB_FAMILY_MASK =                 0xffffff00
 
