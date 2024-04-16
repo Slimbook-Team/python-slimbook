@@ -1,3 +1,9 @@
+python-slimbook (1.11.1.1) jammy; urgency=medium
+
+  * addes libslimbook as build-dep
+
+ -- Slimbook <dev@slimbook.es>  Tue, 16 Apr 2024 09:49:38 +0200
+
 python-slimbook (1.11.1) jammy; urgency=medium
 
   * no longer using ctypes find_library
