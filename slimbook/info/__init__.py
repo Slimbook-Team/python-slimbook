@@ -86,6 +86,9 @@ def get_family():
 
 def get_platform():
     return _libslimbook.slb_info_get_platform()
+    
+def find_platform(model):
+    return _libslimbook.slb_info_find_platform(model)
 
 def is_module_loaded():
     return (_libslimbook.slb_info_is_module_loaded() != 0 )
