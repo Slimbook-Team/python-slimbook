@@ -1,3 +1,9 @@
+python-slimbook (1.14.0) noble; urgency=medium
+
+  * Implemented get_family_name
+
+ -- Slimbook <dev@slimbook.es>  Sun, 02 Jun 2024 17:18:18 +0200
+
 python-slimbook (1.12.0) jammy; urgency=medium
 
   * Implemented find_platform
