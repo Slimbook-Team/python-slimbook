@@ -84,6 +84,10 @@ def get_model():
 def get_family():
     return _libslimbook.slb_info_get_family()
 
+def get_family_name():
+    _libslimbook.slb_info_get_family_name.restype = c_char_p
+    return _libslimbook.slb_info_get_family_name().decode("utf-8")
+
 def get_platform():
     return _libslimbook.slb_info_get_platform()
     
