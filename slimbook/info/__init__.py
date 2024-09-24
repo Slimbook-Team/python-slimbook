@@ -42,8 +42,14 @@ SLB_MODEL_EXCALIBUR =             0x4000
 SLB_MODEL_EXCALIBUR_14_AMD7 =     0x4001
 SLB_MODEL_EXCALIBUR_16_AMD7 =     0x4002
 
-SLB_MODEL_HERO_S         =        0x8000
+SLB_MODEL_HERO_S =                0x8000
 SLB_MODEL_HERO_S_TGL_RTX =        0x8001
+
+SLB_MODEL_ZERO =              0x01000000
+SLB_MODEL_ZERO_I3 =           0x01000001
+
+SLB_MODEL_ONE =               0x02000000
+SLB_MODEL_ONE_AMD8 =          0x02000001
 
 SLB_PLATFORM_UNKNOWN =            0x0000
 SLB_PLATFORM_QC71 =               0x0100
@@ -57,6 +63,14 @@ SLB_SCAN_QC71_TOUCHPAD_SWITCH =   0x76
 SLB_SCAN_Z16_ENERGY_SAVER_MODE =  0xf2
 SLB_SCAN_Z16_BALANCED_MODE =      0xf9
 SLB_SCAN_Z16_PERFORMANCE_MODE =   0xe2
+
+SLB_MODULE_NOT_LOADED =           0x00
+SLB_MODULE_LOADED =               0x01
+SLB_MODULE_NOT_NEEDED =           0x02
+SLB_MODULE_UNKNOWN =              0x03
+
+def confidence():
+    return _libslimbook.slb_info_confidence()
 
 def product_name():
     _libslimbook.slb_info_product_name.restype = c_char_p
@@ -99,7 +113,7 @@ def find_platform(model):
     return _libslimbook.slb_info_find_platform(model)
 
 def is_module_loaded():
-    return (_libslimbook.slb_info_is_module_loaded() != 0 )
+    return _libslimbook.slb_info_is_module_loaded()
 
 def keyboard_device():
     _libslimbook.slb_info_keyboard_device.restype = c_char_p
