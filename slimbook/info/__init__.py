@@ -33,26 +33,62 @@ SLB_MODEL_ESSENTIAL_15_11 =       0x1005
 SLB_MODEL_ELEMENTAL =             0x2000
 SLB_MODEL_ELEMENTAL_15_I12 =      0x2001
 SLB_MODEL_ELEMENTAL_14_I12 =      0x2002
+SLB_MODEL_ELEMENTAL_15_I12B =     0x2003
+SLB_MODEL_ELEMENTAL_14_I12B =     0x2004
+SLB_MODEL_ELEMENTAL_15_I13 =      0x2005
+SLB_MODEL_ELEMENTAL_14_I13 =      0x2006
 
 SLB_MODEL_EXCALIBUR =             0x4000
-SLB_MODEL_EXCALIBUR_14_AMD7 =     0x4001
 SLB_MODEL_EXCALIBUR_16_AMD7 =     0x4002
+SLB_MODEL_EXCALIBUR_16_AMD8 =     0x4003
+SLB_MODEL_EXCALIBUR_16R_AMD8 =    0x4004
 
-SLB_MODEL_HERO_S         =        0x8000
+SLB_MODEL_HERO_S =                0x8000
 SLB_MODEL_HERO_S_TGL_RTX =        0x8001
+
+SLB_MODEL_EVO =                 0x010000
+SLB_MODEL_EVO_14_A8 =           0x010001
+
+SLB_MODEL_CREATIVE =            0x020000
+SLB_MODEL_CREATIVE_15_A8_RTX =  0x020001
+
+SLB_MODEL_ZERO =              0x01000000
+SLB_MODEL_ZERO_I3 =           0x01000001
+
+SLB_MODEL_ONE =               0x02000000
+SLB_MODEL_ONE_AMD8 =          0x02000001
 
 SLB_PLATFORM_UNKNOWN =            0x0000
 SLB_PLATFORM_QC71 =               0x0100
 SLB_PLATFORM_CLEVO =              0x0200
 SLB_PLATFORM_Z16 =                0x0400
+SLB_PLATFORM_HMT16 =              0x0800
+SLB_PLATFORM_IDL =              0x010000
+SLB_PLATFORM_IDA =              0x020000
 
 SLB_SCAN_QC71_SUPER_LOCK =        0x68
 SLB_SCAN_QC71_SILENT_MODE =       0x69
 SLB_SCAN_QC71_TOUCHPAD_SWITCH =   0x76
 
-SLB_SCAN_Z16_ENERGY_SAVER_MODE =  0xf2
-SLB_SCAN_Z16_BALANCED_MODE =      0xf9
-SLB_SCAN_Z16_PERFORMANCE_MODE =   0xe2
+SLB_SCAN_ENERGY_SAVER_MODE =  0xf2
+SLB_SCAN_BALANCED_MODE =      0xf9
+SLB_SCAN_PERFORMANCE_MODE =   0xe2
+
+SLB_SCAN_Z16_ENERGY_SAVER_MODE =  SLB_SCAN_ENERGY_SAVER_MODE
+SLB_SCAN_Z16_BALANCED_MODE =      SLB_SCAN_BALANCED_MODE
+SLB_SCAN_Z16_PERFORMANCE_MODE =   SLB_SCAN_PERFORMANCE_MODE
+
+SLB_SCAN_HMT16_ENERGY_SAVER_MODE = SLB_SCAN_ENERGY_SAVER_MODE
+SLB_SCAN_HMT16_BALANCED_MODE =     SLB_SCAN_BALANCED_MODE
+SLB_SCAN_HMT16_PERFORMANCE_MODE =  SLB_SCAN_PERFORMANCE_MODE
+
+SLB_MODULE_NOT_LOADED =           0x00
+SLB_MODULE_LOADED =               0x01
+SLB_MODULE_NOT_NEEDED =           0x02
+SLB_MODULE_UNKNOWN =              0x03
+
+def confidence():
+    return _libslimbook.slb_info_confidence()
 
 def product_name():
     _libslimbook.slb_info_product_name.restype = c_char_p
@@ -84,6 +120,10 @@ def get_model():
 def get_family():
     return _libslimbook.slb_info_get_family()
 
+def get_family_name():
+    _libslimbook.slb_info_get_family_name.restype = c_char_p
+    return _libslimbook.slb_info_get_family_name().decode("utf-8")
+
 def get_platform():
     return _libslimbook.slb_info_get_platform()
     
@@ -91,7 +131,7 @@ def find_platform(model):
     return _libslimbook.slb_info_find_platform(model)
 
 def is_module_loaded():
-    return (_libslimbook.slb_info_is_module_loaded() != 0 )
+    return _libslimbook.slb_info_is_module_loaded()
 
 def keyboard_device():
     _libslimbook.slb_info_keyboard_device.restype = c_char_p
