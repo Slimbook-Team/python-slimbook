@@ -1,3 +1,9 @@
+python-slimbook (1.15.8) noble; urgency=medium
+
+  * Dummy upgrade
+
+ -- Slimbook <dev@slimbook.es>  Thu, 17 Oct 2024 17:45:03 +0200
+
 python-slimbook (1.15.7) noble; urgency=medium
 
   * Updated constants to match 1.15.7
