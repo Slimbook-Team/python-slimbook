@@ -1,4 +1,4 @@
-python-slimbook (1.15.8+bpo1) focal; urgency=medium
+python-slimbook (1.15.9~bpo9) focal; urgency=medium
 
   * Backport from noble
 
