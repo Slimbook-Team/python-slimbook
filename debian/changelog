@@ -1,3 +1,9 @@
+python-slimbook (1.15.10) noble; urgency=medium
+
+  * Updated scancode constants
+
+ -- Slimbook <dev@slimbook.es>  Fri, 22 Nov 2024 11:14:13 +0100
+
 python-slimbook (1.15.8) noble; urgency=medium
 
   * Dummy upgrade
