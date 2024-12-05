@@ -86,6 +86,13 @@ SLB_MODULE_LOADED =               0x01
 SLB_MODULE_NOT_NEEDED =           0x02
 SLB_MODULE_UNKNOWN =              0x03
 
+SLB_QC71_PROFILE_UNKNOWN =        0x00
+SLB_QC71_PROFILE_SILENT =         0x01
+SLB_QC71_PROFILE_NORMAL =         0x02
+SLB_QC71_PROFILE_ENERGY_SAVER =   0x01
+SLB_QC71_PROFILE_BALANCED =       0x02
+SLB_QC71_PROFILE_PERFORMANCE =    0x03
+
 def confidence():
     return _libslimbook.slb_info_confidence()
 
