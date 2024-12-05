@@ -1,3 +1,9 @@
+python-slimbook (1.17.0) noble; urgency=medium
+
+  * Better handling of power profiles
+
+ -- Slimbook <dev@slimbook.es>  Thu, 05 Dec 2024 11:39:41 +0100
+
 python-slimbook (1.16.0) noble; urgency=medium
 
   * Removed IDA/IDL constants
