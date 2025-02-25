@@ -1,3 +1,9 @@
+python-slimbook (1.17.3) noble; urgency=medium
+
+  * Added evo 15 to the database
+
+ -- Slimbook <dev@slimbook.es>  Mon, 24 Feb 2025 16:06:34 +0100
+
 python-slimbook (1.17.0) noble; urgency=medium
 
   * Better handling of power profiles
