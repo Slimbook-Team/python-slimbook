@@ -152,6 +152,16 @@ def touchpad_device():
     _libslimbook.slb_info_touchpad_device.restype = c_char_p
     return _libslimbook.slb_info_touchpad_device().decode("utf-8")
 
+def get_ac_state(ac):
+    value = c_uint()
+    _libslimbook.slb_info_get_ac_state.restype = c_uint
+    status = _libslimbook.slb_info_get_ac_state(ac, byref(value))
+    
+    if (status == 0):
+        return value.value
+    else:
+        return -1
+
 def uptime():
     return _libslimbook.slb_info_uptime()
 
