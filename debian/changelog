@@ -1,3 +1,9 @@
+python-slimbook (1.17.4) noble; urgency=medium
+
+  * Added function for getting ac power supply state
+
+ -- Slimbook <dev@slimbook.es>  Tue, 25 Feb 2025 22:17:05 +0100
+
 python-slimbook (1.17.3) noble; urgency=medium
 
   * Added evo 15 to the database
