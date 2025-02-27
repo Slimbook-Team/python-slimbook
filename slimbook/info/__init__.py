@@ -48,6 +48,7 @@ SLB_MODEL_HERO_S_TGL_RTX =        0x8001
 
 SLB_MODEL_EVO =                 0x010000
 SLB_MODEL_EVO_14_A8 =           0x010001
+SLB_MODEL_EVO_15_A8 =           0x010002
 
 SLB_MODEL_CREATIVE =            0x020000
 SLB_MODEL_CREATIVE_15_A8_RTX =  0x020001
@@ -150,6 +151,16 @@ def module_device():
 def touchpad_device():
     _libslimbook.slb_info_touchpad_device.restype = c_char_p
     return _libslimbook.slb_info_touchpad_device().decode("utf-8")
+
+def get_ac_state(ac):
+    value = c_uint()
+    _libslimbook.slb_info_get_ac_state.restype = c_uint
+    status = _libslimbook.slb_info_get_ac_state(ac, byref(value))
+    
+    if (status == 0):
+        return value.value
+    else:
+        return -1
 
 def uptime():
     return _libslimbook.slb_info_uptime()
