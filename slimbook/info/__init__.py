@@ -1,6 +1,6 @@
 import ctypes
 import ctypes.util
-from ctypes import c_char_p, c_uint, c_ulonglong
+from ctypes import c_char_p, c_uint, c_ulonglong, byref
 
 _libslimbook = ctypes.CDLL("libslimbook.so.1")
 
