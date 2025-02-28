@@ -1,3 +1,9 @@
+python-slimbook (1.17.4.1) noble; urgency=medium
+
+  * Fixed missing import
+
+ -- Slimbook <dev@slimbook.es>  Fri, 28 Feb 2025 18:27:12 +0100
+
 python-slimbook (1.17.4) noble; urgency=medium
 
   * Added function for getting ac power supply state
