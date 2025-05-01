@@ -94,6 +94,16 @@ SLB_QC71_PROFILE_ENERGY_SAVER =   0x01
 SLB_QC71_PROFILE_BALANCED =       0x02
 SLB_QC71_PROFILE_PERFORMANCE =    0x03
 
+SLB_TDP_TYPE_UNKNOWN =            0x00
+SLB_TDP_TYPE_INTEL =              0x01
+SLB_TDP_TYPE_AMD =                0x02
+
+class TDP(ctypes.Structure):
+    _fields_ = [("slow", ctypes.c_ubyte),
+                 ("fast", ctypes.c_ubyte),
+                 ("sustained",ctypes.c_ubyte),
+                 ("type",ctypes.c_ubyte)]
+
 def confidence():
     return _libslimbook.slb_info_confidence()
 
@@ -180,3 +190,7 @@ def total_memory():
 def available_memory():
     _libslimbook.slb_info_available_memory.restype = c_ulonglong
     return _libslimbook.slb_info_available_memory()
+
+def get_tdp_info():
+    _libslimbook.slb_info_get_tdp_info.restype = TDP
+    return _libslimbook.slb_info_get_tdp_info()
