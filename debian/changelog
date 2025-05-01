@@ -1,3 +1,9 @@
+python-slimbook (1.18.0) noble; urgency=medium
+
+  * Added a TDP query function
+
+ -- Slimbook <dev@slimbook.es>  Thu, 01 May 2025 17:39:38 +0200
+
 python-slimbook (1.17.4.1) noble; urgency=medium
 
   * Fixed missing import
