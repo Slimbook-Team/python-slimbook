@@ -1,3 +1,9 @@
+python-slimbook (1.18.3) noble; urgency=medium
+
+  * Added new model constants
+
+ -- Slimbook <dev@slimbook.es>  Thu, 24 Jul 2025 11:38:46 +0200
+
 python-slimbook (1.18.0) noble; urgency=medium
 
   * Added a TDP query function
