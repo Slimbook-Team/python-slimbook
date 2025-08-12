@@ -1,3 +1,9 @@
+python-slimbook (1.18.4) noble; urgency=medium
+
+  * Added qc71 manual_control api
+
+ -- slimbook <dev@slimbook.es>  Tue, 12 Aug 2025 19:49:52 +0200
+
 python-slimbook (1.18.3) noble; urgency=medium
 
   * Added new model constants
