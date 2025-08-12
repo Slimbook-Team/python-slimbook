@@ -4,6 +4,16 @@ from ctypes import c_char_p, c_int, c_uint, byref
 
 _libslimbook = ctypes.CDLL("libslimbook.so.1")
     
+def manual_control_get():
+    value = c_uint()
+    _libslimbook.slb_qc71_manual_control_get.restype = c_uint
+    status = _libslimbook.slb_qc71_manual_control_get(byref(value))
+    
+    return value.value
+
+def manual_control_set(value):
+    status = _libslimbook.slb_qc71_manual_control_set(value)
+
 def fn_lock_get():
     value = c_uint()
     _libslimbook.slb_qc71_fn_lock_get.restype = c_uint
