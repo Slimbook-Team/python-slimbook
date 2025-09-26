@@ -6,10 +6,20 @@ _libslimbook = ctypes.CDLL("libslimbook.so.1")
 
 def backlight_get(model):
     color = c_uint()
-    _libslimbook.slb_config_load.restype = c_int
+    _libslimbook.slb_kbd_backlight_get.restype = c_int
     status = _libslimbook.slb_kbd_backlight_get(model, byref(color))
     
     return color.value
 
 def backlight_set(model,color):
     _libslimbook.slb_kbd_backlight_set(model,color)
+    
+def brightness_get(model):
+    value = c_uint()
+    _libslimbook.slb_kbd_brightness_get.restype = c_int
+    status = _libslimbook.slb_kbd_brightness_get(model, byref(value))
+    
+    return value.value
+
+def brightness_set(model,value):
+    _libslimbook.slb_kbd_brightness_set(model,value)
