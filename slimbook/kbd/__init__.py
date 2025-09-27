@@ -23,3 +23,10 @@ def brightness_get(model):
 
 def brightness_set(model,value):
     _libslimbook.slb_kbd_brightness_set(model,value)
+    
+def brightness_max(model):
+    value = c_uint()
+    _libslimbook.slb_kbd_brightness_max.restype = c_int
+    status = _libslimbook.slb_kbd_brightness_max(model, byref(value))
+    
+    return value.value
