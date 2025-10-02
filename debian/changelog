@@ -1,3 +1,9 @@
+python-slimbook (1.19.0~fallsupdate0) noble; urgency=medium
+
+  * Match libslimbook 1.19
+
+ -- slimbook <dev@slimbook.es>  Thu, 02 Oct 2025 16:21:28 +0200
+
 python-slimbook (1.18.4) noble; urgency=medium
 
   * Added qc71 manual_control api
