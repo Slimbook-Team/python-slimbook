@@ -63,3 +63,16 @@ def profile_get():
 
 def profile_set(value):
     status = _libslimbook.slb_qc71_profile_set(value)
+
+def custom_tdp_get():
+    pl1 = c_uint()
+    pl2 = c_uint()
+    pl4 = c_uint()
+    
+    _libslimbook.slb_qc71_custom_tdp_get.restype = c_uint
+    status = _libslimbook.slb_qc71_custom_tdp_get(byref(pl1),byref(pl2),byref(pl4))
+
+    return (pl1.value, pl2.value, pl4.value)
+
+def custom_tdp_set(pl1,pl2,pl4):
+    status = _libslimbook.slb_qc71_custom_tdp_set(pl1,pl2,pl4)
