@@ -57,6 +57,7 @@ SLB_MODEL_EVO_15_AI9_STP =      0x010004
 
 SLB_MODEL_CREATIVE =            0x020000
 SLB_MODEL_CREATIVE_15_A8_RTX =  0x020001
+SLB_MODEL_CREATIVE_15_AI9_RTX5 = 0x020002
 
 SLB_MODEL_ZERO =              0x01000000
 SLB_MODEL_ZERO_I3 =           0x01000001
@@ -154,6 +155,10 @@ def find_platform(model):
 
 def is_module_loaded():
     return _libslimbook.slb_info_is_module_loaded()
+
+def get_performance_profiles():
+    _libslimbook.slb_info_get_performance_profiles.restype = c_uint
+    return _libslimbook.slb_info_get_performance_profiles()
 
 def keyboard_device():
     _libslimbook.slb_info_keyboard_device.restype = c_char_p
