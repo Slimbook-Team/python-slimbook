@@ -1,3 +1,9 @@
+python-slimbook (1.20.0) noble; urgency=medium
+
+  * Match libslimbook 1.20
+
+ -- Slimbook <dev@slimbook.es>  Fri, 09 Jan 2026 23:21:03 +0100
+
 python-slimbook (1.19.0~fallsupdate0) noble; urgency=medium
 
   * Match libslimbook 1.19
