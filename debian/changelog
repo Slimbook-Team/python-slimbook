@@ -1,3 +1,9 @@
+python-slimbook (1.21.0) noble; urgency=medium
+
+  * Dummy upgrade
+
+ -- Slimbook <dev@slimbook.es>  Wed, 28 Jan 2026 18:13:31 +0100
+
 python-slimbook (1.20.1) noble; urgency=medium
 
   * Added new models constants (and some missing)

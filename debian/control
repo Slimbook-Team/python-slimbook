@@ -8,6 +8,6 @@ Homepage: https://github.com/Slimbook-Team/python-slimbook
 
 Package: python3-slimbook
 Architecture: amd64
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${python:Depends}, libslimbook1, python3
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${python:Depends}, libslimbook1 (>= ${binary:Version}), python3
 Description: libslimbook python binding
  This python module wraps libslimbook functionality with ctypes and addds some extra features
