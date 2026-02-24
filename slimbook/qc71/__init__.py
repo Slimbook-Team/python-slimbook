@@ -76,3 +76,10 @@ def custom_tdp_get():
 
 def custom_tdp_set(pl1,pl2,pl4):
     status = _libslimbook.slb_qc71_custom_tdp_set(pl1,pl2,pl4)
+
+def custom_mode_get():
+    value = c_uint()
+    _libslimbook.slb_qc71_custom_mode_get.restype = c_uint
+    status = _libslimbook.slb_qc71_custom_mode_get(byref(value))
+
+    return value.value
