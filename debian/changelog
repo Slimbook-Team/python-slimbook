@@ -1,3 +1,9 @@
+python-slimbook (1.22.0) noble; urgency=medium
+
+  * Added qc71 custom mode flag getter
+
+ -- Slimbook <dev@slimbook.es>  Tue, 24 Feb 2026 22:50:53 +0100
+
 python-slimbook (1.21.0) noble; urgency=medium
 
   * Dummy upgrade
