@@ -1,3 +1,9 @@
+python-slimbook (1.22.0~resolute0) resolute; urgency=medium
+
+  * Upload to 26.04
+
+ -- Slimbook <dev@slimbook.es>  Thu, 02 Apr 2026 08:16:00 +0200
+
 python-slimbook (1.22.0) noble; urgency=medium
 
   * Added qc71 custom mode flag getter
