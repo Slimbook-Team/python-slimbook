@@ -83,3 +83,13 @@ def custom_mode_get():
     status = _libslimbook.slb_qc71_custom_mode_get(byref(value))
 
     return value.value
+
+def ac_auto_boot_get():
+    value = c_uint()
+    _libslimbook.slb_qc71_ac_auto_boot_get.restype = c_uint
+    status = _libslimbook.slb_qc71_ac_auto_boot_get(byref(value))
+
+    return value.value
+
+def ac_auto_boot_set(value):
+    status = _libslimbook.slb_qc71_ac_auto_boot_set(value)
